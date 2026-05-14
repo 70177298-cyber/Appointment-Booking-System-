@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABS - Appointment Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Appointment Booking System (ABS)</h1>
+    <p>For Healthcare • Education • Beauty</p>
+  </header>
+
+  <main>
+    <section class="domain-selection">
+      <h2>Select Domain</h2>
+      <div class="domains">
+        <div class="domain-card" onclick="selectDomain('health')">
+          <h3>🏥 Healthcare</h3>
+          <p>Doctors & Clinics (Health Card)</p>
+        </div>
+        <div class="domain-card" onclick="selectDomain('education')">
+          <h3>📚 Education</h3>
+          <p>Tutors & Institutes</p>
+        </div>
+        <div class="domain-card" onclick="selectDomain('beauty')">
+          <h3>💇 Beauty</h3>
+          <p>Salons & Spas</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking-section" class="hidden">
+      <h2 id="domain-title">Book Appointment</h2>
+      
+      <div class="form-group">
+        <label>Service Provider</label>
+        <select id="provider">
+          <!-- Populated by JS -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="date">
+      </div>
+
+      <div class="form-group">
+        <label>Time Slot</label>
+        <select id="time">
+          <option>09:00 AM</option>
+          <option>10:00 AM</option>
+          <option>11:00 AM</option>
+          <option>02:00 PM</option>
+          <option>03:00 PM</option>
+        </select>
+      </div>
+
+      <button onclick="bookAppointment()" class="btn">Book Appointment</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
