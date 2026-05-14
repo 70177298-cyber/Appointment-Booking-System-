@@ -3,63 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABS - Appointment Booking System</title>
+  <title>ABS | Appointment Booking System</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Appointment Booking System (ABS)</h1>
-    <p>For Healthcare • Education • Beauty</p>
-  </header>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>ABS</h1>
+      <p>Appointment Booking System</p>
+      <span class="tagline">Healthcare • Education • Beauty</span>
+    </header>
 
-  <main>
-    <section class="domain-selection">
-      <h2>Select Domain</h2>
-      <div class="domains">
+    <!-- Domain Selection -->
+    <section class="domain-section">
+      <h2 class="section-title">Choose Your Domain</h2>
+      <div class="domains-grid">
         <div class="domain-card" onclick="selectDomain('health')">
-          <h3>🏥 Healthcare</h3>
-          <p>Doctors & Clinics (Health Card)</p>
+          <div class="icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Doctors & Clinics</p>
+          <span class="sub">Health Card Supported</span>
         </div>
+
         <div class="domain-card" onclick="selectDomain('education')">
-          <h3>📚 Education</h3>
+          <div class="icon">📖</div>
+          <h3>Education</h3>
           <p>Tutors & Institutes</p>
         </div>
+
         <div class="domain-card" onclick="selectDomain('beauty')">
-          <h3>💇 Beauty</h3>
+          <div class="icon">💆‍♀️</div>
+          <h3>Beauty</h3>
           <p>Salons & Spas</p>
         </div>
       </div>
     </section>
 
-    <section id="booking-section" class="hidden">
+    <!-- Booking Form -->
+    <section id="booking-section" class="booking-form hidden">
       <h2 id="domain-title">Book Appointment</h2>
       
-      <div class="form-group">
-        <label>Service Provider</label>
-        <select id="provider">
-          <!-- Populated by JS -->
-        </select>
-      </div>
+      <div class="form-container">
+        <div class="form-group">
+          <label>Service Provider</label>
+          <select id="provider"></select>
+        </div>
 
-      <div class="form-group">
-        <label>Date</label>
-        <input type="date" id="date">
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="date">
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <select id="time">
+              <option>09:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:30 AM</option>
+              <option>02:00 PM</option>
+              <option>03:30 PM</option>
+              <option>05:00 PM</option>
+            </select>
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label>Time Slot</label>
-        <select id="time">
-          <option>09:00 AM</option>
-          <option>10:00 AM</option>
-          <option>11:00 AM</option>
-          <option>02:00 PM</option>
-          <option>03:00 PM</option>
-        </select>
+        <button onclick="bookAppointment()" class="book-btn">
+          Confirm Appointment
+        </button>
       </div>
-
-      <button onclick="bookAppointment()" class="btn">Book Appointment</button>
     </section>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
